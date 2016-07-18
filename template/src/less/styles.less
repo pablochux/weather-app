@@ -1,0 +1,128 @@
+@import 'animations.less';
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto-Regular';
+}
+body{
+	background-color: #4A90E2;
+}
+section{
+	margin-top: 150px;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.clear-fix{
+	clear: both;
+}
+/* Initial State */
+.weather-container,
+.locating{
+	// display: none;
+}
+/* Home Page */
+.home-page{
+	&-text{
+		color: #FFF;
+		padding: 20px;
+	}
+}
+.check-weather{
+	border: none;
+	background-color: #FFF;
+	padding: 15px 20px;
+	box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.50);
+	border-radius: 5px;
+
+	font-family: inherit;
+	font-size: 18px;
+	color: #434343;
+	letter-spacing: 0px;
+	outline: none;
+	position: relative;
+	bottom: 6px;
+	transition: bottom 0.2s;
+
+	&:hover{
+		bottom: 4px;
+	}
+}
+/* Locating */
+.locating{
+	color: #FFF;
+	&-text{
+		font-size: 24px;
+		color: #FFF;
+
+		& span{
+			animation-name: blink;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-fill-mode: both;
+		}
+		& span:nth-child(2){
+			animation-delay: .2s;
+		}
+		& span:nth-child(3){
+			animation-delay: .4s;
+		}
+	}
+	&-icon{
+		width: 61.45px;
+
+		& path{
+			fill: #FFF;
+		}
+	}
+}
+/* Weather app */
+.weather-container{
+	background-color: #FFF;
+	box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.50);
+	border-radius: 5px;
+	max-width: 300px;
+	margin: 150px auto;
+	padding: 30px 40px;
+	font-weight: 100;
+
+	& .weather-city{
+		font-size: 18px;
+		font-style: none;
+		font-weight: inherit;
+		letter-spacing: 0.2px;
+
+		& a:hover{
+			color: lighten(#000, 40%);
+		}
+	}
+
+	& .weather-resume{
+		padding: 30px 40px;
+		padding-bottom: 0;
+
+		& .temperature{
+			font-family: Roboto-Light;
+			font-size: 23px;
+			color: #D7360A;
+			letter-spacing: 0px;
+			float: left;
+
+			&>span{
+				float: left;
+			}
+			& .temperature-scale:hover{
+				color: #4A90E2;
+				cursor: pointer;
+			}
+		}
+		& .weather-icon{
+			font-size: 30px;
+			float: right;
+		}
+	}
+}
