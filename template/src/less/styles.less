@@ -1,34 +1,28 @@
-@import 'animations.less';
+//------------------------------
+// Imports
+//------------------------------
+@import "reset";
+@import "default";
+@import "animations";
+@import 'variables';
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Roboto-Regular';
-}
-body{
-	background-color: #4A90E2;
-}
-section{
+//------------------------------
+//
+//------------------------------
+.section{
 	margin-top: 150px;
 	text-align: center;
 }
-a{
-	text-decoration: none;
-	color: inherit;
-}
-.clear-fix{
-	clear: both;
-}
+
 /* Initial State */
 .weather-container,
 .locating{
 	// display: none;
 }
 /* Home Page */
-.home-page{
-	&-text{
-		color: #FFF;
+.home{
+	&__text{
+		color: @main-text-color;
 		padding: 20px;
 	}
 }
@@ -55,24 +49,25 @@ a{
 /* Locating */
 .locating{
 	color: #FFF;
-	&-text{
+
+	&__text{
 		font-size: 24px;
 		color: #FFF;
 
-		& span{
+		& .dot{
 			animation-name: blink;
 			animation-duration: 2s;
 			animation-iteration-count: infinite;
 			animation-fill-mode: both;
 		}
-		& span:nth-child(2){
+		& .dot:nth-child(2){
 			animation-delay: .2s;
 		}
-		& span:nth-child(3){
+		& .dot:nth-child(3){
 			animation-delay: .4s;
 		}
 	}
-	&-icon{
+	&__icon{
 		width: 61.45px;
 
 		& path{
@@ -81,7 +76,7 @@ a{
 	}
 }
 /* Weather app */
-.weather-container{
+.weather{
 	background-color: #FFF;
 	box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.50);
 	border-radius: 5px;
@@ -90,7 +85,7 @@ a{
 	padding: 30px 40px;
 	font-weight: 100;
 
-	& .weather-city{
+	&__city{
 		font-size: 18px;
 		font-style: none;
 		font-weight: inherit;
@@ -100,29 +95,28 @@ a{
 			color: lighten(#000, 40%);
 		}
 	}
+}
+.weather-resume{
+	padding: 30px 40px;
+	padding-bottom: 0;
 
-	& .weather-resume{
-		padding: 30px 40px;
-		padding-bottom: 0;
+	&__icon{
+		font-size: 30px;
+		float: right;
+	}
+}
+.temperature{
+	font-family: Roboto-Light;
+	font-size: 23px;
+	color: #D7360A;
+	letter-spacing: 0px;
+	float: left;
 
-		& .temperature{
-			font-family: Roboto-Light;
-			font-size: 23px;
-			color: #D7360A;
-			letter-spacing: 0px;
-			float: left;
-
-			&>span{
-				float: left;
-			}
-			& .temperature-scale:hover{
-				color: #4A90E2;
-				cursor: pointer;
-			}
-		}
-		& .weather-icon{
-			font-size: 30px;
-			float: right;
-		}
+	&>span{
+		float: left;
+	}
+	&__scale:hover{
+		color: #4A90E2;
+		cursor: pointer;
 	}
 }
