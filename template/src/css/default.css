@@ -1,0 +1,14 @@
+.center {
+  text-align: center;
+}
+.margin-center {
+  margin: 0 auto;
+}
+.clear-fix {
+  clear: both;
+}
+body {
+  font-family: 'Roboto-Regular';
+  background-color: #4A90E2;
+  color: #FFF;
+}
