@@ -10,13 +10,19 @@
 .clear-fix{
 	clear: both;
 }
+.hide{
+	display: none;
+}
+.block{
+	display: block;
+}
 //------------------------------
 // Colour Variables
 //------------------------------
-@main-text-color: #FFF;
-@main-bg-color: #4A90E2;
+$main-text-color: #FFF;
+$main-bg-color: #4A90E2;
 
 //------------------------------
 // URLS Variables
 //------------------------------
-@img: "../img";
+$img: "../img";

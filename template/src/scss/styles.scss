@@ -1,7 +1,7 @@
 //------------------------------
 // Imports
 //------------------------------
-@import "reset";
+@import 'reset';
 @import "default";
 @import "animations";
 @import 'variables';
@@ -10,19 +10,18 @@
 //
 //------------------------------
 .section{
-	margin-top: 150px;
-	.center;
+	margin-top: 50px;
+	@extend .center;
 }
 
-/* Initial State */
-.locating,
-.weather{
-	display: none;
-}
 /* Home Page */
 .home{
 	&__text{
-		padding: 60px;
+		padding: 20px;
+		@media screen and (min-width: 768px){
+			padding: 60px;
+		}
+
 	}
 	&__check-weather{
 		border: none;
@@ -31,7 +30,7 @@
 		box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.50);
 		border-radius: 5px;
 
-		font-size: 18px;
+		font-size: 1.1rem;
 		color: #434343;
 		outline: none;
 		position: relative;
@@ -46,8 +45,9 @@
 
 /* Locating */
 .locating{
+	padding-top: 150px;
 	&__text{
-		font-size: 24px;
+		font-size: 1.6rem;
 		color: #FFF;
 
 		& .dot{
@@ -68,24 +68,23 @@
 		width: 61.45px;
 
 		& path{
-			fill: @main-text-color;
+			fill: $main-text-color;
 		}
 	}
 }
 /* Weather app */
 .weather{
-	background-color: @main-text-color;
+	background-color: $main-text-color;
 	box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.50);
 	border-radius: 5px;
 	max-width: 300px;
 	margin: 150px auto;
-	padding: 30px 40px;
+	padding: 30px 10px;
 	font-weight: 100;
 	color: #000;
 
 	&__city{
-		font-size: 18px;
-		font-style: none;
+		font-size: 1rem;
 		font-weight: inherit;
 		letter-spacing: 0.2px;
 
@@ -93,14 +92,14 @@
 			color: lighten(#000, 40%);
 		}
 	}
-	&__conditions{
-		padding-top: 10px;
-		padding-bottom: 10px;
+	&__phrase{
+		font-style: italic;
+		font-weight: 300;
+		padding: 20px;
 	}
 }
 .weather-resume{
-	padding: 30px 40px;
-	padding-bottom: 0;
+	padding: 0 70px;
 
 	&__icon{
 		font-size: 30px;
@@ -113,7 +112,7 @@
 	color: #D7360A;
 	letter-spacing: 0px;
 	float: left;
-	padding-top: 5px;
+	padding-top: 2px;
 
 	&>span{
 		float: left;

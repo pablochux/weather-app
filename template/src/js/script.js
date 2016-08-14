@@ -13,8 +13,8 @@ var weatherIcons = {
     'mist': '🌫'
 };
 var weatherPhrases = {
-    'clear sky': ["The sky is perfectly clear. Go out!", "With this sun you are going to burn in seconds"],
-    'few clouds': ["There are a few cloud in the sky so watch out!"],
+    'clear sky': ["The sky is perfectly clear. Go out!", "With this sun you are going to burn in seconds", "The sun is shinning for you"],
+    'few clouds': ["There are a few cloud in the sky so watch out!", "Maybe you should get an umbrella"],
     'scattered clouds': ['There are only a few clouds', 'It\'s not going to rain, don\'t worry'],
     'broken clouds':  ['Grab your phone and snap this moment!', 'Take a photo now!'],
     'shower rain': ["It's starting to rain. Go home!", 'Don\'t worry, it\'s nothing'],
@@ -30,15 +30,12 @@ var temperature_scales = ["F", "C"];
 //-------
 function setWeatherData(lat, log, weatherIcons, callback) {
 	$.getJSON('http://api.openweathermap.org/data/2.5/forecast/city?lat=' + lat + '&lon=' + log + '&units=metric&APPID=8ee5138d46a0454c83b9e6a24eb6f31e', function(data){
-	    	console.log("Weather: " + data);
-            console.log(data.list[0].weather[0].description);
-            console.log(weatherIcons[data.list[0].weather[0].description]);
             // Set city name
 	    	$('.weather__city').text(data.city.name + ', ' + data.city.country).attr('href', 'http://maps.google.com/?q=' + data.city.name);
             // Set weather state
 	    	$('.weather__conditions').text(data.list[0].weather[0].description);
             // Set weather phrase
-            $('.weather__phrase').text(weatherPhrases[data.list[0].weather[0].description][Math.floor(Math.random() * weatherPhrases[data.list[0].weather[0].description].length)]);
+            $('.weather__phrase').text("\"" + weatherPhrases[data.list[0].weather[0].description][Math.floor(Math.random() * weatherPhrases[data.list[0].weather[0].description].length)] + "\"");
             // Set weather degrees
             $('.temperature__degrees').text(Math.round(data.list[0].main.temp));
             // Set weather icon
@@ -58,12 +55,9 @@ $(document).ready(function(){
     $(".home__check-weather").click(function(){
         $(this).fadeOut(function(){$(".locating").fadeIn(300)});
         $(".home").fadeOut(function(){$(".locating").fadeIn(300)});
-        console.log("Locating");
         if (navigator.geolocation) {
-            console.log("Located");
             navigator.geolocation.getCurrentPosition(function(position) {
                 setWeatherData(position.coords.latitude, position.coords.longitude, weatherIcons, function(){$(".locating").fadeOut(function(){$(".weather").fadeIn()})});
-                console.log("Change to weather app");
            });
         }
     });

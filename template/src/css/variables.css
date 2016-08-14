@@ -1,9 +1,14 @@
 .center {
-  text-align: center;
-}
+  text-align: center; }
+
 .margin-center {
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+
 .clear-fix {
-  clear: both;
-}
+  clear: both; }
+
+.hide {
+  display: none; }
+
+.block {
+  display: block; }
