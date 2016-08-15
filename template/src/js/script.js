@@ -53,11 +53,11 @@ function changeScale(degrees, scale){
 //-------
 $(document).ready(function(){
     $(".home__check-weather").click(function(){
-        $(this).fadeOut(function(){$(".locating").fadeIn(300)});
-        $(".home").fadeOut(function(){$(".locating").fadeIn(300)});
+        $(this).fadeOut(function(){$(".locating").fadeIn(300);});
+        $(".home").fadeOut(function(){$(".locating").fadeIn(300);});
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
-                setWeatherData(position.coords.latitude, position.coords.longitude, weatherIcons, function(){$(".locating").fadeOut(function(){$(".weather").fadeIn()})});
+                setWeatherData(position.coords.latitude, position.coords.longitude, weatherIcons, function(){$(".locating").fadeOut(function(){$(".weather").fadeIn();});});
            });
         }
     });
