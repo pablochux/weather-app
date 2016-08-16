@@ -28,46 +28,46 @@ li {
   display: block; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2rem; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 1.5rem; }
 
 h3 {
-  font-size: 1.17em; }
+  font-size: 1.17rem; }
 
 h4 {
-  font-size: 1em; }
+  font-size: 1rem; }
 
 h5 {
-  font-size: 0.83em; }
+  font-size: 0.83rem; }
 
 h6 {
-  font-size: 0.67em; }
+  font-size: 0.67rem; }
 
 strong {
   font-weight: bold; }
 
 a,
 button {
-  color: inherit;
-  transition: .3s; }
+  transition: 0.3s;
+  color: inherit; }
 
 a {
   text-decoration: none; }
 
 button {
-  overflow: visible;
-  border: 0;
-  font: inherit;
-  -webkit-font-smoothing: inherit;
-  letter-spacing: inherit;
+  border: none;
   background: none;
-  cursor: pointer; }
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  overflow: visible;
+  -webkit-font-smoothing: inherit; }
 
 ::-moz-focus-inner {
   padding: 0;
-  border: 0; }
+  border: none; }
 
 :focus {
   outline: 0; }
@@ -75,7 +75,7 @@ button {
 img {
   max-width: 100%;
   height: auto;
-  border: 0; }
+  border: none; }
 
 .center, .section {
   text-align: center; }
@@ -93,9 +93,9 @@ img {
   display: block; }
 
 body {
-  font-family: 'Roboto-Regular';
   background-color: #4A90E2;
-  color: #FFF; }
+  color: #FFF;
+  font-family: 'Roboto-Regular'; }
 
 @keyframes blink {
   0% {
@@ -123,7 +123,6 @@ body {
 .section {
   margin-top: 50px; }
 
-/* Home Page */
 .home__text {
   padding: 20px; }
   @media screen and (min-width: 768px) {
@@ -131,26 +130,25 @@ body {
       padding: 60px; } }
 
 .home__check-weather {
-  border: none;
-  background-color: #FFF;
-  padding: 10px 15px;
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  font-size: 1.1rem;
-  color: #434343;
-  outline: none;
   position: relative;
   bottom: 6px;
-  transition: bottom 0.2s; }
+  padding: 10px 15px;
+  transition: bottom 0.2s;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #FFF;
+  color: #434343;
+  font-size: 1.1rem;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5); }
   .home__check-weather:hover {
     bottom: 4px; }
 
-/* Locating */
 .locating {
   padding-top: 150px; }
   .locating__text {
-    font-size: 1.6rem;
-    color: #FFF; }
+    color: #FFF;
+    font-size: 1.6rem; }
     .locating__text .dot {
       font-size: 30px;
       animation-name: blink;
@@ -158,24 +156,23 @@ body {
       animation-iteration-count: infinite;
       animation-fill-mode: both; }
     .locating__text .dot:nth-child(2) {
-      animation-delay: .2s; }
+      animation-delay: 0.2s; }
     .locating__text .dot:nth-child(3) {
-      animation-delay: .4s; }
+      animation-delay: 0.4s; }
   .locating__icon {
     width: 61.45px; }
     .locating__icon path {
       fill: #FFF; }
 
-/* Weather app */
 .weather {
-  background-color: #FFF;
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
   max-width: 300px;
   margin: 150px auto;
   padding: 30px 10px;
+  border-radius: 5px;
+  background-color: #FFF;
+  color: #000;
   font-weight: 100;
-  color: #000; }
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5); }
   .weather__city {
     font-size: 1rem;
     font-weight: inherit;
@@ -183,25 +180,31 @@ body {
     .weather__city:hover {
       color: #666666; }
   .weather__phrase {
+    padding: 20px;
     font-style: italic;
-    font-weight: 300;
-    padding: 20px; }
+    font-weight: 300; }
 
 .weather-resume {
   padding: 0 70px; }
   .weather-resume__icon {
-    font-size: 30px;
-    float: right; }
+    float: right;
+    font-size: 30px; }
 
 .temperature {
+  padding-top: 2px;
+  float: left;
   font-family: Roboto-Light;
   font-size: 23px;
-  color: #D7360A;
-  letter-spacing: 0px;
-  float: left;
-  padding-top: 2px; }
+  letter-spacing: 0; }
+  .temperature_high {
+    color: #D7360A; }
+    .temperature_high .temperature__scale:hover {
+      color: #8e2407;
+      cursor: pointer; }
+  .temperature_low {
+    color: #4A90E2; }
+    .temperature_low .temperature__scale:hover {
+      color: #1f69c1;
+      cursor: pointer; }
   .temperature > span {
     float: left; }
-  .temperature__scale:hover {
-    color: #4A90E2;
-    cursor: pointer; }

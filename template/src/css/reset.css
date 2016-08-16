@@ -28,46 +28,46 @@ li {
   display: block; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2rem; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 1.5rem; }
 
 h3 {
-  font-size: 1.17em; }
+  font-size: 1.17rem; }
 
 h4 {
-  font-size: 1em; }
+  font-size: 1rem; }
 
 h5 {
-  font-size: 0.83em; }
+  font-size: 0.83rem; }
 
 h6 {
-  font-size: 0.67em; }
+  font-size: 0.67rem; }
 
 strong {
   font-weight: bold; }
 
 a,
 button {
-  color: inherit;
-  transition: .3s; }
+  transition: 0.3s;
+  color: inherit; }
 
 a {
   text-decoration: none; }
 
 button {
-  overflow: visible;
-  border: 0;
-  font: inherit;
-  -webkit-font-smoothing: inherit;
-  letter-spacing: inherit;
+  border: none;
   background: none;
-  cursor: pointer; }
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  overflow: visible;
+  -webkit-font-smoothing: inherit; }
 
 ::-moz-focus-inner {
   padding: 0;
-  border: 0; }
+  border: none; }
 
 :focus {
   outline: 0; }
@@ -75,4 +75,4 @@ button {
 img {
   max-width: 100%;
   height: auto;
-  border: 0; }
+  border: none; }

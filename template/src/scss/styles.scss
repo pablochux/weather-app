@@ -127,17 +127,29 @@
 	padding-top: 2px;
 	float: left;
 
-	color: #D7360A;
 	font-family: Roboto-Light;
 	font-size: 23px;
 	letter-spacing: 0;
 
-	&>span{
-		float: left;
+	&_high{
+		color: #D7360A;
+
+		& .temperature__scale:hover{
+			color: darken(#D7360A, 15%);
+			cursor: pointer;
+		}
 	}
 
-	&__scale:hover{
+	&_low{
 		color: #4A90E2;
-		cursor: pointer;
+
+		& .temperature__scale:hover{
+			color: darken(#4A90E2, 15%);;
+			cursor: pointer;
+		}
+	}
+
+	&>span{
+		float: left;
 	}
 }

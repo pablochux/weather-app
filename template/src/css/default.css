@@ -14,6 +14,6 @@
   display: block; }
 
 body {
-  font-family: 'Roboto-Regular';
   background-color: #4A90E2;
-  color: #FFF; }
+  color: #FFF;
+  font-family: 'Roboto-Regular'; }

@@ -7,6 +7,7 @@ var weatherIcons = {
     'scattered clouds': '🌥',
     'broken clouds': '☁️',
     'shower rain': '🌧',
+    'light rain': '🌧',
     'rain': '🌧',
     'thunderstorm': '🌩',
     'snow': '🌨',
@@ -17,7 +18,8 @@ var weatherPhrases = {
     'few clouds': ["There are a few cloud in the sky so watch out!", "Maybe you should get an umbrella"],
     'scattered clouds': ['There are only a few clouds', 'It\'s not going to rain, don\'t worry'],
     'broken clouds':  ['Grab your phone and snap this moment!', 'Take a photo now!'],
-    'shower rain': ["It's starting to rain. Go home!", 'Don\'t worry, it\'s nothing'],
+    'shower rain': ["It's starting to rain. Go home!", 'It\'s starting to rain but don\'t worry, it\'s nothing'],
+    'light rain': ["It's starting to rain. Go home!", 'It\'s starting to rain but don\'t worry, it\'s nothing'],
     'rain': ["It's raining. Go home!", "Oh god, what a storm", "Noah must be near. What a flood!", "BRING THE ANIMALS NOAH!!!"],
     'thunderstorm': ["You should go home. The sky is angry", 'It\'s going to get real bad'],
     'snow': ["It's snowing, go grab your skies!", 'It\'s the perfect time to go skiing'],
@@ -30,12 +32,16 @@ var temperature_scales = ["F", "C"];
 //-------
 function setWeatherData(lat, log, weatherIcons, callback) {
 	$.getJSON('http://api.openweathermap.org/data/2.5/forecast/city?lat=' + lat + '&lon=' + log + '&units=metric&APPID=8ee5138d46a0454c83b9e6a24eb6f31e', function(data){
+            console.log('Recibida');
+            console.log(data);
             // Set city name
 	    	$('.weather__city').text(data.city.name + ', ' + data.city.country).attr('href', 'http://maps.google.com/?q=' + data.city.name);
             // Set weather state
 	    	$('.weather__conditions').text(data.list[0].weather[0].description);
             // Set weather phrase
             $('.weather__phrase').text("\"" + weatherPhrases[data.list[0].weather[0].description][Math.floor(Math.random() * weatherPhrases[data.list[0].weather[0].description].length)] + "\"");
+            // Set temperature color
+            $('.temperature').addClass((Math.round(data.list[0].main.temp) < 15) ? 'temperature_low' : 'temperature_high');
             // Set weather degrees
             $('.temperature__degrees').text(Math.round(data.list[0].main.temp));
             // Set weather icon
