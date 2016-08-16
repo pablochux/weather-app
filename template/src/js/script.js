@@ -32,8 +32,6 @@ var temperature_scales = ["F", "C"];
 //-------
 function setWeatherData(lat, log, weatherIcons, callback) {
 	$.getJSON('http://api.openweathermap.org/data/2.5/forecast/city?lat=' + lat + '&lon=' + log + '&units=metric&APPID=8ee5138d46a0454c83b9e6a24eb6f31e', function(data){
-            console.log('Recibida');
-            console.log(data);
             // Set city name
 	    	$('.weather__city').text(data.city.name + ', ' + data.city.country).attr('href', 'http://maps.google.com/?q=' + data.city.name);
             // Set weather state
