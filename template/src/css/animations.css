@@ -5,3 +5,7 @@
     opacity: 1; }
   100% {
     opacity: 0.2; } }
+
+@keyframes spin {
+  50% {
+    -webkit-transform: rotateY(360deg); } }

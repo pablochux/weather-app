@@ -57,7 +57,7 @@
 		& .dot{
 			font-size: 30px;
 			animation-name: blink;
-			animation-duration: 2s;
+			animation-duration: 3s;
 			animation-iteration-count: infinite;
 			animation-fill-mode: both;
 		}
@@ -73,6 +73,9 @@
 
 	&__icon{
 		width: 61.45px;
+		animation: spin;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
 
 		& path{
 			fill: $main-text-color;

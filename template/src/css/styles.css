@@ -105,6 +105,10 @@ body {
   100% {
     opacity: 0.2; } }
 
+@keyframes spin {
+  50% {
+    -webkit-transform: rotateY(360deg); } }
+
 .center, .section {
   text-align: center; }
 
@@ -152,7 +156,7 @@ body {
     .locating__text .dot {
       font-size: 30px;
       animation-name: blink;
-      animation-duration: 2s;
+      animation-duration: 3s;
       animation-iteration-count: infinite;
       animation-fill-mode: both; }
     .locating__text .dot:nth-child(2) {
@@ -160,7 +164,10 @@ body {
     .locating__text .dot:nth-child(3) {
       animation-delay: 0.4s; }
   .locating__icon {
-    width: 61.45px; }
+    width: 61.45px;
+    animation: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; }
     .locating__icon path {
       fill: #FFF; }
 
