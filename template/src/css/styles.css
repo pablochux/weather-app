@@ -109,13 +109,6 @@ img {
   height: auto;
   border: none; }
 
-p {
-  word-break: break-all;
-  hyphens: auto; }
-
-a {
-  column-count: 2; }
-
 * {
   box-sizing: border-box; }
 
@@ -231,7 +224,9 @@ body {
   margin-top: 50px; }
 
 .home__text {
-  padding: 20px; }
+  padding: 40px;
+  font-size: calc(1.3rem + 1vw);
+  font-weight: 300; }
   @media screen and (min-width: 768px) {
     .home__text {
       padding: 60px; } }
@@ -246,8 +241,11 @@ body {
   outline: none;
   background-color: #FFF;
   color: #434343;
-  font-size: 1.1rem;
+  font-size: calc(1.5rem - 0.5vw);
   box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5); }
+  @media screen and (min-width: 1024px) {
+    .home__check-weather {
+      font-size: calc(1.7rem - 0.4vw); } }
   .home__check-weather:hover {
     bottom: 4px; }
 
@@ -255,7 +253,7 @@ body {
   padding-top: 150px; }
   .locating__text {
     color: #FFF;
-    font-size: 1.6rem; }
+    font-size: calc(1.3rem + 1vh); }
     .locating__text .dot {
       font-size: 30px;
       animation-name: blink;

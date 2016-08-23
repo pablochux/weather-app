@@ -16,7 +16,11 @@
 // Home Page
 .home{
 	&__text{
-		padding: 20px;
+		padding: 40px;
+
+		font-size: calc(1.3rem + 1vw);
+		font-weight: 300;
+
 		@media screen and (min-width: 768px){
 			padding: 60px;
 		}
@@ -36,8 +40,12 @@
 		background-color: $main-text-color;
 
 		color: #434343;
-		font-size: 1.1rem;
+		font-size: calc(1.5rem - 0.5vw);
 		box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.50);
+
+		@media screen and (min-width: 1024px) {
+			font-size: calc(1.7rem - 0.4vw);
+		}
 
 		&:hover{
 			bottom: 4px;
@@ -51,7 +59,7 @@
 
 	&__text{
 		color: #FFF;
-		font-size: 1.6rem;
+		font-size: calc(1.3rem + 1vh);
 
 		& .dot{
 			font-size: 30px;
