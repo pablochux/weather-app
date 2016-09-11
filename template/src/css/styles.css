@@ -1,3 +1,11 @@
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0.2; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.2; } }
+
 @keyframes blink {
   0% {
     opacity: 0.2; }
@@ -5,6 +13,10 @@
     opacity: 1; }
   100% {
     opacity: 0.2; } }
+
+@-webkit-keyframes spin {
+  50% {
+    -webkit-transform: rotateY(360deg); } }
 
 @keyframes spin {
   50% {
@@ -31,6 +43,7 @@ body {
   font-family: 'Roboto-Regular'; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -82,6 +95,7 @@ strong {
 
 a,
 button {
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   color: inherit; }
 
@@ -110,6 +124,7 @@ img {
   border: none; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -161,6 +176,7 @@ strong {
 
 a,
 button {
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   color: inherit; }
 
@@ -225,6 +241,7 @@ body {
 
 .home__text {
   padding: 40px;
+  font-size: -webkit-calc(1.3rem + 1vw);
   font-size: calc(1.3rem + 1vw);
   font-weight: 300; }
   @media screen and (min-width: 768px) {
@@ -235,16 +252,21 @@ body {
   position: relative;
   bottom: 6px;
   padding: 10px 15px;
+  -webkit-transition: bottom 0.2s;
   transition: bottom 0.2s;
   border: none;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   outline: none;
   background-color: #FFF;
   color: #434343;
+  font-size: -webkit-calc(1.5rem - 0.5vw);
   font-size: calc(1.5rem - 0.5vw);
+  -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.5); }
   @media screen and (min-width: 1024px) {
     .home__check-weather {
+      font-size: -webkit-calc(1.7rem - 0.4vw);
       font-size: calc(1.7rem - 0.4vw); } }
   .home__check-weather:hover {
     bottom: 4px; }
@@ -253,21 +275,31 @@ body {
   padding-top: 150px; }
   .locating__text {
     color: #FFF;
+    font-size: -webkit-calc(1.3rem + 1vh);
     font-size: calc(1.3rem + 1vh); }
     .locating__text .dot {
       font-size: 30px;
+      -webkit-animation-name: blink;
       animation-name: blink;
+      -webkit-animation-duration: 3s;
       animation-duration: 3s;
+      -webkit-animation-iteration-count: infinite;
       animation-iteration-count: infinite;
+      -webkit-animation-fill-mode: both;
       animation-fill-mode: both; }
     .locating__text .dot:nth-child(2) {
+      -webkit-animation-delay: 0.2s;
       animation-delay: 0.2s; }
     .locating__text .dot:nth-child(3) {
+      -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s; }
   .locating__icon {
     width: 61.45px;
+    -webkit-animation: spin;
     animation: spin;
+    -webkit-animation-duration: 3s;
     animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite; }
     .locating__icon path {
       fill: #FFF; }
@@ -276,10 +308,12 @@ body {
   max-width: 300px;
   margin: 150px auto;
   padding: 30px 10px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   background-color: #FFF;
   color: #000;
   font-weight: 100;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5); }
   .weather__city {
     font-size: 1rem;
